@@ -1,0 +1,97 @@
+# ============================================================================
+#  AscvndMaceRoulette configuration
+#
+#  Colours: use legacy codes like &a &c &l   OR   hex codes like &#FF0000
+#  Placeholders available per message are listed in the comments.
+# ============================================================================
+
+settings:
+  # Minimum players required for the queue countdown to start (min 2).
+  min-players: 2
+  # Length of the lobby countdown once enough players are queued (seconds).
+  queue-countdown-seconds: 60
+  # Length of the mace-roulette spin / pre-round freeze (seconds, min 2).
+  roulette-seconds: 10
+  # Radius of the stone platform (min 5).
+  platform-radius: 15
+
+# --- Queue messages ------------------------------------------------------
+# Placeholders: {player} {count}
+queue:
+  game-in-progress: "&cA game is already in progress. Please wait for it to finish."
+  already-queued: "&eYou are already in the queue."
+  joined: "&aYou joined the Mace Roulette queue!"
+  joined-broadcast: "&a{player} &7joined the queue &8(&a{count}&8 players)"
+  not-in-queue: "&cYou are not in the queue."
+  left: "&eYou left the queue."
+  left-broadcast: "&c{player} &7left the queue &8(&a{count}&8 players)"
+  # {seconds} = queue-countdown-seconds
+  countdown-started: "&aEnough players! The game starts in &e{seconds} &aseconds."
+  countdown-cancelled: "&cNot enough players. Countdown cancelled."
+
+# --- Countdown title (shown during both countdowns) ----------------------
+# Placeholders: {seconds}
+countdown:
+  title: "&#FF0000&lTIME"
+  subtitle: "&f{seconds}s"
+
+# --- Game messages -------------------------------------------------------
+game:
+  begin-broadcast: "&6&lThe Mace Roulette begins! &7Last one standing wins."
+  not-enough-online: "&cNot enough players online to start. Queue reset."
+  arena-fail: "&cFailed to create the arena world. Aborting."
+  # The chosen mace holder. Placeholders: {player}
+  macer-title: "&#006EFF&l{player}"
+  macer-subtitle: "&fHas the Mace!"
+
+# --- Elimination messages ------------------------------------------------
+# Placeholders: {player} {killer}
+elimination:
+  eliminated-title: "&c&lELIMINATED"
+  eliminated-subtitle: "&7You are out of the game!"
+  by-killer: "&c{player} &7was eliminated by &c{killer}&7!"
+  void: "&c{player} &7fell into the void!"
+  out-of-charges: "&c{player} &7ran out of wind charges!"
+  slain: "&c{player} &7was slain!"
+  left-game: "&7{player} left the game."
+
+# --- End of game screens -------------------------------------------------
+# Placeholders: {winner}
+endgame:
+  victory-title: "&#FFD900&lV&#FFDF29&lI&#FFE552&lC&#FFEB7B&lT&#FFE552&lO&#FFDF29&lR&#FFD900&lY"
+  victory-subtitle: "&fYou have won!"
+  defeat-title: "&#FF0000&lDEFEAT"
+  defeat-subtitle: "&f{winner} has won!"
+  winner-broadcast: "&6&l{winner} &ehas won AscvndMaceRoulette!"
+
+# --- Admin / command feedback --------------------------------------------
+# Placeholders: {min}
+admin:
+  already-running: "&cA game is already running."
+  need-players: "&cNeed at least {min} players in the queue to start."
+  force-starting: "&aForce-starting the game..."
+  no-game: "&cNo game is currently running."
+  stop-broadcast: "&cThe game has been stopped by an admin."
+  stop-success: "&aGame stopped and players restored."
+  no-permission: "&cYou don't have permission to do that."
+  reloaded: "&aConfiguration reloaded."
+
+# --- Command help --------------------------------------------------------
+command:
+  only-players: "&cOnly players can do that."
+  help-header: "&6&lAscvndMaceRoulette &7- commands:"
+  help-queue: "&e/mace queue &7- join the game queue"
+  help-leave: "&e/mace leave &7- leave the queue"
+  help-info: "&e/mace info &7- show game status"
+  help-start: "&e/mace start &7- force-start the game"
+  help-stop: "&e/mace stop &7- stop the current game"
+  help-reload: "&e/mace reload &7- reload the config"
+
+# --- /mace info ----------------------------------------------------------
+# Placeholders: {state} {count} {alive} {eliminated} {macer}
+info:
+  header: "&6&lAscvndMaceRoulette"
+  state: "&7State: &e{state}"
+  queue: "&7In queue: &e{count}"
+  players: "&7Alive: &e{alive} &7| Eliminated: &e{eliminated}"
+  macer: "&7Mace holder: &e{macer}"

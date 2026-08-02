@@ -1,0 +1,14 @@
+name: AscvndMaceRoulette
+version: '${version}'
+main: com.ascvnd.maceroulette.AscvndMaceRoulette
+api-version: '1.21'
+author: ISekai
+description: A mace roulette minigame plugin.
+commands:
+  mace:
+    description: Mace Roulette minigame commands.
+    usage: /mace <queue|leave|info|start|stop|reload>
+permissions:
+  ascvndmaceroulette.admin:
+    description: Allows use of admin commands (start/stop).
+    default: op

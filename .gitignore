@@ -1,0 +1,12 @@
+.idea/
+.gradle/
+.git/
+build/
+target/
+out/
+bin/
+run/
+*.iml
+*.zip
+*.log
+build-log.txt
